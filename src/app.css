@@ -1,0 +1,133 @@
+@import '@fontsource/fira-mono';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--mobile-breakpoint: 800px;
+	--tablet-breakpoint: 1200px;
+
+	/* font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Microsoft YaHei Light', sans-serif; */
+
+	--background-primary-dark: #1a1a1a;
+	--background-primary-dark-transparent: #1a1a1a66;
+	--background-primary-default: #202020;
+	--background-primary-light: #363636;
+	--background-primary-lighter: #464646;
+	--background-primary-lightest: #565656;
+
+	--background-secondary-dark: #000000;
+	--background-secondary-default: #161616;
+	--background-secondary-light: #2c2c2c;
+
+	--color-highlight-light: rgb(189, 74, 255);
+	--color-highlight-light-transparent: rgba(189, 74, 255, 0.4);
+	--color-highlight-default: rgb(150, 58, 211);
+	--color-highlight-dark: rgb(140, 53, 194);
+	--color-highlight-darker: rgb(99, 36, 119);
+
+	--text-subtle: #8f8f8f;
+	--text-dark: #cfcfcf;
+	--text-default: #dfdfdf;
+	--text-light: #efefef;
+
+	--scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
+	--scrollbar-bg: rgba(255, 255, 255, 0.05);
+	--scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* #region scrollbars */
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb-bg);
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+	background-color: var(--scrollbar-bg);
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
+	background-color: var(--scrollbar-active-thumb-bg);
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+body:not(.native-scrollbars) * {
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-bg);
+}
+
+/* #endregion */
+
+input[type=text],
+.popover {
+	border: 1px solid;
+	padding: 6px;
+	border-color: var(--background-primary-light);
+	border-radius: 4px;
+	color: var(--text-default);
+	outline: none;
+	background: var(--background-primary-dark);
+	font-size: 14px;
+
+	transition: 0.25s;
+}
+
+input:focus-visible[type=text] {
+	border-color: var(--color-highlight-default);
+	background: var(--background-primary-default);
+	transition: 0.25s;
+}
+
+html,
+body {
+	height: 100%;
+	/* overflow: hidden; */
+
+	display: flex;
+	flex-direction: column;
+
+	margin: 0;
+	background-color: var(--background-primary-default);
+	color: var(--text-default);
+}
+
+/* unvisited link */
+a:link {
+	color: var(--color-highlight-default);
+}
+
+/* visited link */
+a:visited {
+	color: var(--color-highlight-dark);
+}
+
+/* mouse over link */
+a:hover {
+	color: var(--color-highlight-light);
+}
+
+/* selected link */
+a:active {
+	color: var(--color-highlight-default);
+}
